@@ -18,7 +18,7 @@ class HomePage extends GetView {
     var formKey = GlobalKey<FormState>();
 
     TextEditingController nameController = TextEditingController(
-      text: index != null ? controller.devices[index!].name : '',
+      text: index != null ? controller.devices[index].name : '',
     );
 
     TextEditingController wattsController = TextEditingController(
