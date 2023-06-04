@@ -14,7 +14,7 @@ class Application extends StatelessWidget {
       getPages: [
         GetPage(
           name: HomePage.route,
-          page: () => const HomePage(),
+          page: () => HomePage(),
         ),
       ],
     );
