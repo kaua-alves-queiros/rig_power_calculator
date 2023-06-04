@@ -182,7 +182,6 @@ class HomePage extends GetView {
                                       value: 1,
                                       child: Text('Edit'),
                                     ),
-                                    const PopupMenuDivider(),
                                     const PopupMenuItem<int>(
                                       value: 2,
                                       child: Text('Delete'),
