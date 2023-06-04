@@ -10,6 +10,7 @@ class Application extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      title: 'Rig Power Calculator',
       initialRoute: HomePage.route,
       themeMode: ThemeMode.system,
       darkTheme: ThemeData.dark(),
