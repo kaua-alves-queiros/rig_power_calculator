@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "822316430389",
+    "project_id": "rig-power-calculator",
+    "storage_bucket": "rig-power-calculator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822316430389:android:243df9a05642a9d737ad7c",
+        "android_client_info": {
+          "package_name": "com.example.rig_power_calculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "822316430389-pui2har7n4ouglh21o6u4p7mc7dou397.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMCPUXdV5M6Tn3mGWK-bB6KexKZuBLNqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "822316430389-pui2har7n4ouglh21o6u4p7mc7dou397.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
