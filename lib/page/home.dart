@@ -5,6 +5,7 @@ import 'package:rig_power_calculator/model/device.dart';
 
 class HomePage extends GetView {
   static const String route = '/home';
+  @override
   final HomeController controller = Get.put(HomeController());
 
   HomePage({
@@ -204,7 +205,7 @@ class HomePage extends GetView {
                           Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(8),
+                                padding: const EdgeInsets.all(16),
                                 child: Row(
                                   children: [
                                     const Text('Whatts Per Unit: '),
@@ -214,7 +215,7 @@ class HomePage extends GetView {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(16),
                                 child: Row(
                                   children: [
                                     const Text('Quantity: '),
@@ -224,7 +225,7 @@ class HomePage extends GetView {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(16),
                                 child: Row(
                                   children: [
                                     const Text('Total Whats: '),
