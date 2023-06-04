@@ -30,7 +30,9 @@ class HomePage extends GetView {
 
     Get.dialog(
       AlertDialog(
-        title: const Text('Add A Device'),
+        title: Text(index == null
+            ? 'Add A Device'
+            : 'Edit ${nameController.value.text}'),
         content: Form(
           key: formKey,
           child: Column(
