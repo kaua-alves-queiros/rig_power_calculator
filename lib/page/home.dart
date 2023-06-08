@@ -4,17 +4,17 @@ import 'package:rig_power_calculator/controller/home.dart';
 import 'package:rig_power_calculator/widget/device.dart';
 import 'package:rig_power_calculator/widget/device_editor.dart';
 
-class HomePage extends GetView {
+class HomePage extends GetView<HomeController> {
   static const String route = '/home';
-  @override
-  final HomeController controller = Get.put(HomeController());
 
-  HomePage({
+  const HomePage({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
+    Get.put(HomeController());
+
     return GetBuilder<HomeController>(
       init: controller,
       builder: (controller) => Scaffold(
@@ -46,7 +46,6 @@ class HomePage extends GetView {
                   shrinkWrap: true,
                   itemCount: controller.devices.length,
                   itemBuilder: (_, index) => DeviceWidget(
-                    controller: controller,
                     index: index,
                   ),
                 ),
