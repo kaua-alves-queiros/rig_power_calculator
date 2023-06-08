@@ -36,8 +36,8 @@ class HomeController extends GetxController {
         _devices.map((device) => DeviceModel.fromMap(device)).toList();
   }
 
-  double get totalWatts {
-    double total = 0;
+  int get totalWatts {
+    int total = 0;
 
     for (var device in devices) {
       total += device.whatts * device.quatity;

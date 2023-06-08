@@ -1,6 +1,6 @@
 class DeviceModel {
   String name;
-  double whatts;
+  int whatts;
   int quatity;
 
   DeviceModel({

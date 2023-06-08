@@ -111,7 +111,7 @@ class DeviceEditor {
               if (isValid) {
                 DeviceModel deviceInEdition = DeviceModel(
                   name: nameController.text,
-                  whatts: double.parse(wattsController.text),
+                  whatts: int.parse(wattsController.text),
                   quatity: int.parse(quantityController.text),
                 );
 
