@@ -1,9 +1,9 @@
-class Device {
+class DeviceModel {
   String name;
   double whatts;
   int quatity;
 
-  Device({
+  DeviceModel({
     required this.name,
     required this.whatts,
     required this.quatity,
@@ -17,8 +17,8 @@ class Device {
     };
   }
 
-  factory Device.fromMap(Map<String, dynamic> map) {
-    return Device(
+  factory DeviceModel.fromMap(Map<String, dynamic> map) {
+    return DeviceModel(
       name: map['name'],
       whatts: map['whatts'],
       quatity: map['quatity'],
