@@ -3,14 +3,14 @@ import 'package:get_storage/get_storage.dart';
 import 'package:rig_power_calculator/model/device.dart';
 
 class HomeController extends GetxController {
-  RxList<Device> devices = List<Device>.empty().obs;
+  RxList<DeviceModel> devices = List<DeviceModel>.empty().obs;
   final _storage = GetStorage();
 
   HomeController() {
     loadStorate();
   }
 
-  void addDevice(Device device) {
+  void addDevice(DeviceModel device) {
     devices.add(device);
     updateStorate();
     loadStorate();
@@ -22,7 +22,7 @@ class HomeController extends GetxController {
     loadStorate();
   }
 
-  void editDevice(int index, Device device) {
+  void editDevice(int index, DeviceModel device) {
     devices[index] = device;
     updateStorate();
     loadStorate();
@@ -32,7 +32,8 @@ class HomeController extends GetxController {
     List<Map<String, dynamic>> _devices =
         List<Map<String, dynamic>>.from(_storage.read('devices') ?? []);
 
-    devices.value = _devices.map((device) => Device.fromMap(device)).toList();
+    devices.value =
+        _devices.map((device) => DeviceModel.fromMap(device)).toList();
   }
 
   double get totalWatts {
