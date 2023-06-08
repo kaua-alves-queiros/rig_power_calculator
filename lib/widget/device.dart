@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../controller/home.dart';
 import 'device_editor.dart';
 
-class DeviceWidget extends StatelessWidget {
-  HomeController controller;
-  int index;
+class DeviceWidget extends GetView<HomeController> {
+  final int index;
 
-  DeviceWidget({
+  const DeviceWidget({
     super.key,
-    required this.controller,
     required this.index,
   });
 
   @override
   Widget build(BuildContext context) {
+    Get.find<HomeController>();
+
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Card(
