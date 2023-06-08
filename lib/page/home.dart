@@ -15,42 +15,39 @@ class HomePage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     Get.put(HomeController());
 
-    return GetBuilder<HomeController>(
-      init: controller,
-      builder: (controller) => Scaffold(
-        appBar: AppBar(
-          title: const Text('Rig Power Calculator'),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            DeviceEditor.showDialog(
-              onDevice: (device) {
-                controller.addDevice(device);
-              },
-            );
-          },
-          child: const Icon(Icons.add),
-        ),
-        body: SingleChildScrollView(
-          child: Obx(
-            () => Column(
-              children: [
-                controller.totalWatts > 0
-                    ? Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: Text('Total Whatts: ${controller.totalWatts}'),
-                      )
-                    : const Column(),
-                ListView.builder(
-                  primary: false,
-                  shrinkWrap: true,
-                  itemCount: controller.devices.length,
-                  itemBuilder: (_, index) => DeviceWidget(
-                    index: index,
-                  ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Rig Power Calculator'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          DeviceEditor.showDialog(
+            onDevice: (device) {
+              controller.addDevice(device);
+            },
+          );
+        },
+        child: const Icon(Icons.add),
+      ),
+      body: SingleChildScrollView(
+        child: Obx(
+          () => Column(
+            children: [
+              controller.totalWatts > 0
+                  ? Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Text('Total Whatts: ${controller.totalWatts}'),
+                    )
+                  : const Column(),
+              ListView.builder(
+                primary: false,
+                shrinkWrap: true,
+                itemCount: controller.devices.length,
+                itemBuilder: (_, index) => DeviceWidget(
+                  index: index,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
