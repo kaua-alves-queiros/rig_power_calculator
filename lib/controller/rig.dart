@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 import '../model/rig.dart';
-import '../storage/Rigs.dart';
+import '../storage/rigs.dart';
 
 class RigsController extends GetxController {
   Rx<List<RigModel>>? rigs;

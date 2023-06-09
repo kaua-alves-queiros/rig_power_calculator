@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rig_power_calculator/model/device.dart';
 import 'package:rig_power_calculator/model/rig.dart';
-import 'package:rig_power_calculator/storage/Rigs.dart';
+import 'package:rig_power_calculator/storage/rigs.dart';
 import 'package:uuid/uuid.dart';
 
 import '../controller/rig.dart';
