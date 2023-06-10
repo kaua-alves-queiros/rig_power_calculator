@@ -49,7 +49,7 @@ class RigsPage extends GetView<RigsController> {
   void showCreatedDialog(String createdRigId) {
     Get.dialog(
       AlertDialog(
-        title: Text('Rig $createdRigId has been successfully created'),
+        title: Text('Rig [$createdRigId] has been successfully created'),
         actions: [
           ElevatedButton(
             onPressed: () => controller.editRig(createdRigId),
