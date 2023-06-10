@@ -21,7 +21,7 @@ class RigModel {
       id: map['id'] as String,
       devices: List<DeviceModel>.from(
         (List<Map<String, dynamic>>.from(map['devices'])).map<DeviceModel>(
-          (x) => DeviceModel.fromMap(x as Map<String, dynamic>),
+          (x) => DeviceModel.fromMap(x),
         ),
       ),
     );
