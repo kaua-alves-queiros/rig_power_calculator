@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:rig_power_calculator/model/device.dart';
 import 'package:rig_power_calculator/model/rig.dart';
 import 'package:rig_power_calculator/storage/rigs.dart';
+import 'package:rig_power_calculator/widget/rig_list.dart';
 import 'package:uuid/uuid.dart';
 
 import '../controller/rig.dart';
@@ -59,27 +60,6 @@ class RigsPage extends GetView<RigsController> {
     );
   }
 
-  void showRemoveRigDialog(String id) {
-    Get.dialog(
-      AlertDialog(
-        title: Text('Are you sure you want to remove the rig [$id] ? '),
-        actions: [
-          ElevatedButton(
-            onPressed: () => Get.back(),
-            child: const Text('Cancel'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              controller.deleteRig(id);
-              Get.back();
-            },
-            child: const Text('Delete'),
-          ),
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     Get.put<RigsController>(RigsController());
@@ -93,50 +73,7 @@ class RigsPage extends GetView<RigsController> {
         onPressed: showAddRigDialog,
         child: const Icon(Icons.add),
       ),
-      body: Obx(
-        () => ListView.builder(
-          itemCount: controller.rigs!.value.length,
-          itemBuilder: (context, index) {
-            return Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(controller.rigs!.value[index].id),
-                      PopupMenuButton(
-                        itemBuilder: (_) => [
-                          const PopupMenuItem(
-                            value: 1,
-                            child: Text('Edit'),
-                          ),
-                          const PopupMenuItem(
-                            value: 2,
-                            child: Text('Delete'),
-                          ),
-                        ],
-                        onSelected: (value) {
-                          String rigId = controller.rigs!.value[index].id;
-
-                          if (value == 1) {
-                            controller.editRig(rigId);
-                          }
-
-                          if (value == 2) {
-                            showRemoveRigDialog(rigId);
-                          }
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-                const Divider(),
-              ],
-            );
-          },
-        ),
-      ),
+      body: const RigList(),
     );
   }
 }
