@@ -15,6 +15,8 @@ class RigsPage extends GetView<RigsController> {
   });
 
   void addRigOnPressed() {
+    Get.back();
+
     String generatedId = const Uuid().v4().substring(0, 4);
 
     RigsStorage.add(
@@ -23,6 +25,24 @@ class RigsPage extends GetView<RigsController> {
     controller.loadRigs();
 
     showCreatedDialog(generatedId);
+  }
+
+  void showAddRigDialog() {
+    Get.dialog(
+      AlertDialog(
+        title: const Text('Add Rig'),
+        actions: [
+          ElevatedButton(
+            onPressed: Get.back,
+            child: const Text('cancel'),
+          ),
+          ElevatedButton(
+            onPressed: addRigOnPressed,
+            child: const Text('Add'),
+          ),
+        ],
+      ),
+    );
   }
 
   void showCreatedDialog(String createdRigId) {
@@ -70,7 +90,7 @@ class RigsPage extends GetView<RigsController> {
 
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: addRigOnPressed,
+        onPressed: showAddRigDialog,
         child: const Icon(Icons.add),
       ),
       body: Obx(
