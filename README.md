@@ -2,4 +2,4 @@
 
 an application to calculate the power needed to power a rig
 
-[in web](https://rig-power-calculator-d85d2.web.app/#/home)
+This project is just a POC already discontinued, the new project will be created soon
